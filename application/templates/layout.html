@@ -32,37 +32,37 @@
 					<div class="col-lg-3 col-xs-9 col-sm-3">
 
 						<div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-							
+
 							<div id="main-nav">
 
 								<i class="fas fa-hand-holding-usd fa-3x"></i> Esusu
 
 								<a class="nav-link" data-toggle="pill" href="/account_home" role="tab" aria-controls="v-pills-home"> <i class="fas fa-home "></i> Home </a>
-	
+
 								<a class="nav-link" data-toggle="pill" href="/account_profile" role="tab" aria-controls="v-pills-profile" > <i class="fas fa-user"></i>  Profile </a>
-	
+
 								{% if current_user.is_admin %}
-								
+
 								<div class="dropdown show">
 
 									<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 										<i class="fas fa-user-cog"></i> admin
 									</a>
-	
+
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<a class="dropdown-item" href="/admin_pannel?group_id={{group.id}}" >{{group.group_name}}</a>
-										<a class="dropdown-item" href="/admin_pannel?group_id={{group.id}}" >{{group.group_name}}</a>
 										{% for group in current_user.group %}
 
+										<a class="dropdown-item" href="/admin_pannel?group_id={{group.id}}" >{{group.group_name}}</a>
+										<a class="dropdown-item" href="/admin_pannel?group_id={{group.id}}" >{{group.group_name}}</a>
 											<a class="dropdown-item" href="/admin_pannel?group_id={{group.id}}" >{{group.group_name}}</a>
 
 										{% endfor %}
 									</div>
 
 								</div>
-	
+
 								{% endif %}
-	
+
 								<a  class="nav-link" data-toggle="pill" href="/logout" role="tab" aria-controls="v-pills-profile"> <i class="fas fa-sign-out-alt"></i> Log-out </a>
 
 							</div>
